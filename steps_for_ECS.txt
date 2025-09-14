@@ -1,0 +1,14 @@
+1. Manually create repo in your ECR
+2. create docker image in local from dockerfile with following command
+   docker buildx build --platform linux/amd64,linux/arm64 -t <ecr-path>/<repo>:<tag> .
+
+3. Once image is build successfully push it to ecr
+(base) mac:flask-app amit$ docker push <ecr-path>/<repo>:<tag>
+
+4. Manually go and Verify image is uploaded to ECR succesfully
+
+5. Create cluster in ECS with at minimum 1 ec2 instance
+
+6. Create task to deploy the container pulling above image from ECR
+
+7. Verify the solution works from browser
